@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.exe -text
+*.png -text
+*.jpg -text
+*.webp -text
+*.ico -text

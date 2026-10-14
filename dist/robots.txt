@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abelsrzz.github.io/openbundle/sitemap.xml

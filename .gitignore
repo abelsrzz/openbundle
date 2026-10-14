@@ -1,0 +1,37 @@
+# Local hosting state and generated files
+.openai/
+build/
+dist/source.zip
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Private context, lab machines, generated bundles and signing material
+work/
+private-context/
+lab/
+*.log
+*.zip
+*.iso
+*.qcow2
+*.vdi
+*.vmdk
+*.pfx
+*.p12
+*.key
+*.pem
+*.exe
+!dist/openbundle-launcher.exe
+*.msi
+*.msix
+*.appx
+*.msu
+
+# Editor and operating-system state
+.vscode/
+.idea/
+Thumbs.db

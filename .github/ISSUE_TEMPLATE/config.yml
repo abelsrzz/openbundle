@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Seguridad
+    url: https://github.com/abelsrzz/openbundle/blob/main/SECURITY.md
+    about: Consulta el canal privado antes de compartir detalles de una vulnerabilidad.
+  - name: Guía y soporte
+    url: https://github.com/abelsrzz/openbundle/blob/main/PROJECT.md#ayuda-y-propuestas
+    about: Revisa los requisitos y la información necesaria para pedir ayuda.

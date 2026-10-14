@@ -1,0 +1,37 @@
+name: Informar de un error
+description: Un problema reproducible de la web, el paquete o el instalador.
+title: "[Error] "
+body:
+  - type: markdown
+    attributes:
+      value: "Para vulnerabilidades utiliza SECURITY.md. No adjuntes credenciales, datos personales ni instaladores privados."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Qué ocurre y qué esperabas
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Pasos para reproducirlo
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión o commit de OpenBundle
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno
+      description: Navegador, Windows, arquitectura, WinGet y aplicación afectada, según el caso.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Registros o capturas anonimizados
+      description: Incluye solo lo necesario y elimina información privada.

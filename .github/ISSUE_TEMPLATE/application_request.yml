@@ -1,0 +1,33 @@
+name: Añadir o corregir una aplicación
+description: Propuesta para el catálogo de OpenBundle.
+title: "[Catálogo] "
+body:
+  - type: input
+    id: application
+    attributes:
+      label: Nombre de la aplicación
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Sitio oficial
+    validations:
+      required: true
+  - type: input
+    id: manifest
+    attributes:
+      label: ID y manifiesto de WinGet o release oficial
+      description: Si no existe, indícalo; no inventes un ID o argumentos silenciosos.
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requisitos y modo de instalación
+      description: Arquitectura, canal beta, licencia, WSL o instalación manual, según corresponda.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia y logo
+      description: Documentación del editor, procedencia del icono y pruebas reales, si las has realizado.
