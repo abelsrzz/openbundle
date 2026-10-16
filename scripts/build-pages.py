@@ -26,7 +26,7 @@ subprocess.run([sys.executable, str(root / 'scripts' / 'build-seo.py'), '--dist-
 with zipfile.ZipFile(output / 'source.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
     for path in sorted(root.rglob('*')):
         relative = path.relative_to(root)
-        if any(part in {'.git', '.openai', 'build', 'node_modules', '__pycache__', 'work', 'private-context', 'lab', '.vscode', '.idea'} for part in relative.parts):
+        if any(part in {'.git', '.openai', 'build', 'node_modules', '__pycache__', 'work', 'private-context', 'lab', '.vscode', '.idea', '.taste-skill'} for part in relative.parts):
             continue
         if not path.is_file() or relative == Path('dist/source.zip') or path.name.startswith('.env'):
             continue

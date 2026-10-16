@@ -11,11 +11,11 @@ const downloadLabel=()=>$('#download').replaceChildren(icon('download'),document
 let report=null,reviewMessage='',reviewError=false,reviewBusy=false,reviewJob=0,reviewReference,cancelReview;
 let statusText='',statusError=false;
 const status=(msg,error=false)=>{statusText=msg;statusError=error;$('#status').textContent=translateError(msg);$('#status').classList.toggle('error',error);};
-const method=i=>i.type==='download'?t('Descarga oficial')+' · '+(i.architecture||'x64'):(t({custom:'Archivo propio',wsl:'Linux / WSL'}[i.type]||'')||(i.source==='msstore'?'Microsoft Store':'WinGet')+(i.architecture?' · '+i.architecture:''));
+const method=i=>i.type==='download'?'MSI · '+(i.architecture||'x64'):(t({custom:'Archivo propio',wsl:'Linux / WSL'}[i.type]||'')||(i.source==='msstore'?'Microsoft Store':'WinGet')+(i.architecture?' · '+i.architecture:''));
 function switchTab(target){
  const tab=typeof target==='boolean'?(target?'custom':'catalog'):target;
  for(const id of ['catalog','custom','review']){const on=id===tab;$('#'+id+'-panel').hidden=!on;$('#'+id+'-tab').classList.toggle('active',on);$('#'+id+'-tab').setAttribute('aria-selected',String(on));$('#'+id+'-tab').tabIndex=on?0:-1;}
- $('.summary').hidden=tab==='review';$('.workspace').classList.toggle('reviewing',tab==='review');
+ $('.summary').hidden=tab==='review';$('#mobile-package').hidden=tab==='review'||!selection.length;$('.workspace').classList.toggle('reviewing',tab==='review');
 }
 for(const id of ['catalog','custom','review'])$('#'+id+'-tab').onclick=()=>switchTab(id);
 $('.tabs').onkeydown=e=>{
@@ -25,18 +25,21 @@ $('.tabs').onkeydown=e=>{
  switchTab(ids[index]);$('#'+ids[index]+'-tab').focus();
 };
 function renderCatalog(){
+ const firstCatalogPaint=!document.body.dataset.catalogReady;
  const container=$('#catalog');container.replaceChildren();const query=$('#search').value.toLocaleLowerCase('es').normalize('NFD').replace(/\p{Diacritic}/gu,''),cat=$('#category').value;
  const found=catalog.filter(a=>(!cat||a.category===cat)&&(a.name+' '+a.id+' '+a.category+' '+t(a.category)+' '+(a.note||'')+' '+t(a.note||'')).toLocaleLowerCase('es').normalize('NFD').replace(/\p{Diacritic}/gu,'').includes(query));
  $('#visible-count').textContent=t('{count} opciones',{count:found.length});
  for(const category of [...new Set(found.map(a=>a.category))]){
   const group=el('details',undefined,'group');group.open=!!query||!!cat||expandAll||!(closed.get(category)??!['Navegadores','España','IA'].includes(category));
   group.ontoggle=()=>closed.set(category,!group.open);
+  if(firstCatalogPaint)group.classList.add('catalog-enter');
   const summary=el('summary');summary.append(icon('chevron-down'),el('span',t(category)),el('span',found.filter(a=>a.category===category).length,'group-count'));group.append(summary);
   if(category==='Desarrollo · Linux / WSL')group.append(el('p',t('Requiere WSL y una distribución Ubuntu/Debian inicializada. Las herramientas se instalan dentro de Linux.'),'catalog-note'));
   if(category==='IA')group.append(el('p',t('Los modelos locales se descargan por separado. Algunos asistentes requieren cuenta o suscripción.'),'catalog-note'));
   const cards=el('div',undefined,'cards');
   for(const a of found.filter(a=>a.category===category)){
    const selected=selection.find(i=>i.key===a.key),picked=!!selected,card=el('div',undefined,'app-card'+(picked?' checked':'')),choice=el('label',undefined,'app-choice');
+   card.setAttribute('data-ui','');
    const logo=el('img',undefined,'app-icon');logo.src=a.logo;logo.alt='';logo.loading='lazy';const words=el('div',undefined,'app-words');words.append(el('span',a.name),el('small',method(a)));
    const cb=el('input');cb.type='checkbox';cb.id='select-'+a.key;choice.htmlFor=cb.id;cb.checked=picked;cb.setAttribute('aria-label',t('Incluir {name}',{name:a.name+(a.architecture?' '+a.architecture:'')}));
    cb.onchange=()=>{if(cb.checked)selection.push({...a});else selection=selection.filter(i=>i.key!==a.key);render();};choice.append(logo,words);card.append(choice);
@@ -50,6 +53,7 @@ function renderCatalog(){
   group.append(cards);container.append(group);
  }
  $('#empty').hidden=found.length>0;
+ if(catalog.length)document.body.dataset.catalogReady='true';
 }
 function remove(key){selection=selection.filter(i=>i.key!==key);render();}
 function mini(label,text,action){const b=el('button',undefined,'mini');b.append(icon({'↑':'chevron-up','↓':'chevron-down','×':'x'}[text]));b.type='button';b.setAttribute('aria-label',label);b.onclick=action;return b;}
@@ -57,6 +61,9 @@ function render(){
  renderCatalog();const custom=selection.filter(i=>i.type==='custom');$('#custom-count').textContent=custom.length;$('#total').textContent=selection.length;$('#summary-empty').hidden=selection.length>0;
  $('#download').disabled=busy||!selection.length;$('#remember-selection').disabled=busy;$('#download-zip').disabled=$('#download').disabled;
  $('#wsl-options').hidden=!selection.some(i=>i.type==='wsl');
+ $('#package-filename').hidden=!selection.length;$('#package-filename').textContent=installerFileName(selection);
+ $('#mobile-package').hidden=!selection.length||$('#review-tab').getAttribute('aria-selected')==='true';
+ $('#mobile-package-label').textContent=t('Ver paquete ({count})',{count:selection.length});
  const list=$('#selected-list');list.replaceChildren();selection.forEach((i,n)=>{
   const row=el('div',undefined,'selection'),name=el('div',i.name,'name');name.append(el('small',method(i)));row.append(name);
   for(const [delta,symbol,label] of [[-1,'↑','Subir'],[1,'↓','Bajar']]){const b=mini(t(label+' {name}',{name:i.name}),symbol,()=>{[selection[n],selection[n+delta]]=[selection[n+delta],selection[n]];render();});b.disabled=n+delta<0||n+delta>=selection.length;row.append(b);}row.append(mini(t('Quitar {name}',{name:i.name}),'×',()=>remove(i.key)));list.append(row);
@@ -67,7 +74,7 @@ function render(){
  for(const i of custom){
   const fileName=i.blob.name||i.name+'.'+i.ext,box=el('article',undefined,'custom-editor');
   const titleId='installer-'+i.key,id='command-'+i.key,helpId='command-help-'+i.key;
-  box.setAttribute('aria-labelledby',titleId);
+  box.setAttribute('aria-labelledby',titleId);box.setAttribute('data-ui','');
   const heading=el('div',undefined,'installer-heading'),identity=el('div',undefined,'installer-identity');
   const title=el('h3',i.name);title.id=titleId;
   const metadata=el('p',fileName+' · '+formatSize(i.blob.size),'installer-meta');
@@ -93,6 +100,8 @@ function addFiles(files,replaceKey=null){
  }
  render();status(errors.join('. '),!!errors.length);if(replaceKey&&!errors.length)switchTab(true);
 }
+$('#start-selection').onclick=e=>{e.preventDefault();switchTab('catalog');$('#search').focus();};
+$('#open-package').onclick=()=>{const summary=$('#package-summary');summary.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});const heading=summary.querySelector('h2');heading.tabIndex=-1;heading.focus({preventScroll:true});};
 $('#choose-files').onclick=()=>$('#files').click();
 $('#files').onchange=e=>{addFiles(e.target.files);e.target.value='';};
 document.addEventListener('click',e=>{if(!e.target.closest('.app-info'))for(const info of document.querySelectorAll('.app-info[open]'))info.open=false;});

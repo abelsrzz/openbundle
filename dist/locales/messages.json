@@ -309,7 +309,17 @@
     "Abrir una issue": "Open an issue",
     "Informar de un error, proponer una mejora o pedir un paquete": "Report a bug, suggest an improvement or request a package",
     "282 opciones directamente instalables, con Affinity, las aplicaciones Craft, programas de España y herramientas de desarrollo. Las versiones y arquitecturas aparecen por separado. Puedes buscar, filtrar por categoría y plegar los grupos.": "282 directly installable options, including Affinity, Craft apps, Spanish programs and development tools. Versions and architectures appear separately. You can search, filter by category and collapse groups.",
-    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "The catalogue only offers options with a defined automatic installation method. Add your own files and commands in Your installers."
+    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "The catalogue only offers options with a defined automatic installation method. Add your own files and commands in Your installers.",
+    "Tu equipo, en un paquete.": "Your apps, one installer.",
+    "Elige tus programas y crea un instalador para Windows. Tus archivos se procesan en tu navegador.": "Choose your apps and create a Windows installer. Your files are processed in your browser.",
+    "Elegir programas": "Choose apps",
+    "Nombre del paquete": "Package name",
+    "Ver paquete": "View package",
+    "Ver paquete ({count})": "View package ({count})",
+    "Instala a tu manera.": "Install your way.",
+    "Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada.": "Each option has a defined automatic method. Some require an account or an initialized WSL distribution.",
+    "El catálogo incluye navegadores, utilidades, herramientas de desarrollo y programas de España. Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada. Consulta el": "The catalogue includes browsers, utilities, development tools and Spanish programs. Each option has a defined automatic method. Some require an account or an initialized WSL distribution. See the",
+    "Crea tu primer paquete.": "Create your first package."
   },
   "fr": {
     "OpenBundle | Instalador de aplicaciones para Windows": "OpenBundle | Installateur d’applications Windows",
@@ -621,7 +631,17 @@
     "Abrir una issue": "Ouvrir une issue",
     "Informar de un error, proponer una mejora o pedir un paquete": "Signaler un bug, proposer une amélioration ou demander un logiciel",
     "282 opciones directamente instalables, con Affinity, las aplicaciones Craft, programas de España y herramientas de desarrollo. Las versiones y arquitecturas aparecen por separado. Puedes buscar, filtrar por categoría y plegar los grupos.": "282 options directement installables, dont Affinity, les applications Craft, des logiciels espagnols et des outils de développement. Les versions et architectures sont distinctes. Vous pouvez rechercher, filtrer par catégorie et replier les groupes.",
-    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "Le catalogue propose uniquement des options avec une méthode d’installation automatique définie. Ajoutez vos fichiers et commandes dans Vos installateurs."
+    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "Le catalogue propose uniquement des options avec une méthode d’installation automatique définie. Ajoutez vos fichiers et commandes dans Vos installateurs.",
+    "Tu equipo, en un paquete.": "Vos apps, un installateur.",
+    "Elige tus programas y crea un instalador para Windows. Tus archivos se procesan en tu navegador.": "Choisissez vos applications et créez un installateur Windows. Vos fichiers sont traités dans votre navigateur.",
+    "Elegir programas": "Choisir des applications",
+    "Nombre del paquete": "Nom du paquet",
+    "Ver paquete": "Voir le paquet",
+    "Ver paquete ({count})": "Voir le paquet ({count})",
+    "Instala a tu manera.": "Installez à votre façon.",
+    "Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada.": "Chaque option dispose d’une méthode automatique définie. Certaines nécessitent un compte ou une distribution WSL initialisée.",
+    "El catálogo incluye navegadores, utilidades, herramientas de desarrollo y programas de España. Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada. Consulta el": "Le catalogue comprend des navigateurs, des utilitaires, des outils de développement et des logiciels espagnols. Chaque option dispose d’une méthode automatique. Certaines nécessitent un compte ou une distribution WSL initialisée. Consultez le",
+    "Crea tu primer paquete.": "Créez votre premier paquet."
   },
   "de": {
     "OpenBundle | Instalador de aplicaciones para Windows": "OpenBundle | Anwendungsinstaller für Windows",
@@ -933,7 +953,17 @@
     "Abrir una issue": "Issue erstellen",
     "Informar de un error, proponer una mejora o pedir un paquete": "Fehler melden, Verbesserung vorschlagen oder Paket anfordern",
     "282 opciones directamente instalables, con Affinity, las aplicaciones Craft, programas de España y herramientas de desarrollo. Las versiones y arquitecturas aparecen por separado. Puedes buscar, filtrar por categoría y plegar los grupos.": "282 direkt installierbare Optionen, darunter Affinity, Craft-Apps, spanische Programme und Entwicklungswerkzeuge. Versionen und Architekturen erscheinen getrennt. Sie können suchen, nach Kategorie filtern und Gruppen einklappen.",
-    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "Der Katalog bietet nur Optionen mit festgelegter automatischer Installation. Eigene Dateien und Befehle unter Eigene Installer hinzufügen."
+    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "Der Katalog bietet nur Optionen mit festgelegter automatischer Installation. Eigene Dateien und Befehle unter Eigene Installer hinzufügen.",
+    "Tu equipo, en un paquete.": "Deine Apps. Ein Installer.",
+    "Elige tus programas y crea un instalador para Windows. Tus archivos se procesan en tu navegador.": "Wähle deine Apps und erstelle einen Windows-Installer. Deine Dateien werden in deinem Browser verarbeitet.",
+    "Elegir programas": "Apps auswählen",
+    "Nombre del paquete": "Paketname",
+    "Ver paquete": "Paket ansehen",
+    "Ver paquete ({count})": "Paket ansehen ({count})",
+    "Instala a tu manera.": "Installiere auf deine Art.",
+    "Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada.": "Alle Optionen haben einen festgelegten automatischen Weg. Einige benötigen ein Konto oder eine initialisierte WSL-Distribution.",
+    "El catálogo incluye navegadores, utilidades, herramientas de desarrollo y programas de España. Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada. Consulta el": "Der Katalog umfasst Browser, Dienstprogramme, Entwicklungswerkzeuge und spanische Programme. Alle Optionen haben einen automatischen Weg. Einige benötigen ein Konto oder eine initialisierte WSL-Distribution. Siehe den",
+    "Crea tu primer paquete.": "Erstelle dein erstes Paket."
   },
   "pt": {
     "OpenBundle | Instalador de aplicaciones para Windows": "OpenBundle | Instalador de aplicações para Windows",
@@ -1245,7 +1275,17 @@
     "Abrir una issue": "Abrir uma issue",
     "Informar de un error, proponer una mejora o pedir un paquete": "Comunicar um erro, propor uma melhoria ou pedir um pacote",
     "282 opciones directamente instalables, con Affinity, las aplicaciones Craft, programas de España y herramientas de desarrollo. Las versiones y arquitecturas aparecen por separado. Puedes buscar, filtrar por categoría y plegar los grupos.": "282 opções diretamente instaláveis, incluindo Affinity, aplicações Craft, programas espanhóis e ferramentas de desenvolvimento. As versões e arquiteturas aparecem separadamente. Pode pesquisar, filtrar por categoria e recolher grupos.",
-    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "O catálogo oferece apenas opções com um método automático definido. Adicione os seus ficheiros e comandos em Os seus instaladores."
+    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "O catálogo oferece apenas opções com um método automático definido. Adicione os seus ficheiros e comandos em Os seus instaladores.",
+    "Tu equipo, en un paquete.": "As tuas apps, um pacote.",
+    "Elige tus programas y crea un instalador para Windows. Tus archivos se procesan en tu navegador.": "Escolhe os teus programas e cria um instalador para Windows. Os ficheiros são processados no teu navegador.",
+    "Elegir programas": "Escolher programas",
+    "Nombre del paquete": "Nome do pacote",
+    "Ver paquete": "Ver pacote",
+    "Ver paquete ({count})": "Ver pacote ({count})",
+    "Instala a tu manera.": "Instala à tua maneira.",
+    "Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada.": "As opções têm um método automático definido. Algumas requerem uma conta ou uma distribuição WSL já inicializada.",
+    "El catálogo incluye navegadores, utilidades, herramientas de desarrollo y programas de España. Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada. Consulta el": "O catálogo inclui navegadores, utilitários, ferramentas de desenvolvimento e programas espanhóis. As opções têm um método automático definido. Algumas requerem conta ou uma distribuição WSL inicializada. Consulta o",
+    "Crea tu primer paquete.": "Cria o teu primeiro pacote."
   },
   "it": {
     "OpenBundle | Instalador de aplicaciones para Windows": "OpenBundle | Installatore di applicazioni per Windows",
@@ -1557,6 +1597,16 @@
     "Abrir una issue": "Apri una issue",
     "Informar de un error, proponer una mejora o pedir un paquete": "Segnala un errore, proponi un miglioramento o richiedi un pacchetto",
     "282 opciones directamente instalables, con Affinity, las aplicaciones Craft, programas de España y herramientas de desarrollo. Las versiones y arquitecturas aparecen por separado. Puedes buscar, filtrar por categoría y plegar los grupos.": "282 opzioni installabili direttamente, tra cui Affinity, app Craft, programmi spagnoli e strumenti di sviluppo. Versioni e architetture appaiono separatamente. Puoi cercare, filtrare per categoria e comprimere i gruppi.",
-    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "Il catalogo offre solo opzioni con un metodo automatico definito. Aggiungi file e comandi personali in I tuoi installer."
+    "El catálogo ofrece únicamente opciones con una vía automática definida. Añade tus archivos propios y sus comandos en Tus instaladores.": "Il catalogo offre solo opzioni con un metodo automatico definito. Aggiungi file e comandi personali in I tuoi installer.",
+    "Tu equipo, en un paquete.": "Le tue app, un installer.",
+    "Elige tus programas y crea un instalador para Windows. Tus archivos se procesan en tu navegador.": "Scegli i programmi e crea un installer per Windows. I file vengono elaborati nel tuo browser.",
+    "Elegir programas": "Scegli programmi",
+    "Nombre del paquete": "Nome del pacchetto",
+    "Ver paquete": "Vedi pacchetto",
+    "Ver paquete ({count})": "Vedi pacchetto ({count})",
+    "Instala a tu manera.": "Installa a modo tuo.",
+    "Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada.": "Le opzioni hanno un metodo automatico definito. Alcune richiedono un account o una distribuzione WSL già inizializzata.",
+    "El catálogo incluye navegadores, utilidades, herramientas de desarrollo y programas de España. Las opciones tienen una vía automática definida. Algunas requieren cuenta o una distribución WSL ya inicializada. Consulta el": "Il catalogo include browser, utilità, strumenti di sviluppo e programmi spagnoli. Le opzioni hanno un metodo automatico definito. Alcune richiedono un account o una distribuzione WSL inizializzata. Consulta il",
+    "Crea tu primer paquete.": "Crea il tuo primo pacchetto."
   }
 }

@@ -35,3 +35,6 @@ lab/
 .vscode/
 .idea/
 Thumbs.db
+
+# Local frontend review artefacts
+.taste-skill/
